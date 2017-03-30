@@ -29,6 +29,9 @@ public final class Registry {
     public static float density;
     public static Drawable cloud;
     public static Drawable player;
+    public static Drawable[] meteor;
+    public static Drawable[] bird;
+
 
     public static void initialize(Context c) {
         Registry.assets = c.getAssets();
@@ -40,6 +43,14 @@ public final class Registry {
     public static void loadResources(Context c) {
         Registry.player = ContextCompat.getDrawable(c, R.drawable.ic_player_balloon);
         Registry.cloud = ContextCompat.getDrawable(c, R.drawable.ic_cloud);
+
+        Registry.meteor = new Drawable[2];
+        Registry.meteor[0] = ContextCompat.getDrawable(c, R.drawable.enemy_meteor_left);
+        Registry.meteor[1] = ContextCompat.getDrawable(c, R.drawable.enemy_meteor_right);
+
+        Registry.bird = new Drawable[2];
+        Registry.bird[0] = ContextCompat.getDrawable(c, R.drawable.enemy_bird_left);
+        Registry.bird[1] = ContextCompat.getDrawable(c, R.drawable.enemy_bird_right);
 
 
 //        background = loadBitmap("bg.png", false);

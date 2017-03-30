@@ -53,6 +53,11 @@ public final class Painter {
         return paint.measureText(text);
     }
 
+    public Rect getTextBounds(String text) {
+        this.paint.getTextBounds(text, 0, text.length(), srcRect);
+        return srcRect;
+    }
+
     public float centerText(String text, int objectWidth) {
         float textWidth = paint.measureText(text);
         return (objectWidth / 2) - (textWidth / 2);

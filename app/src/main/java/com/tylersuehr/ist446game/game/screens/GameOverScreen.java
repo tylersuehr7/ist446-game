@@ -52,6 +52,8 @@ public class GameOverScreen extends Screen {
 
     @Override
     public boolean onTouch(MotionEvent e, int touchX, int touchY) {
-        return false;
+        // TODO: Show dialog like in previous game
+        setCurrentScreen(new PlayScreen(game, presenter));
+        return true;
     }
 }
