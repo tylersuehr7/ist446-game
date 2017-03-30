@@ -11,6 +11,7 @@ import com.tylersuehr.ist446game.game.framework.IGamePresenter;
 import com.tylersuehr.ist446game.game.framework.InputManager;
 import com.tylersuehr.ist446game.game.framework.Painter;
 import com.tylersuehr.ist446game.game.framework.Screen;
+import com.tylersuehr.ist446game.game.screens.LoadingScreen;
 /**
  * Copyright 2017 Tyler Suehr
  * Created by tyler on 3/29/2017.
@@ -19,8 +20,10 @@ import com.tylersuehr.ist446game.game.framework.Screen;
  */
 @SuppressLint("ViewConstructor")
 public class GameView extends SurfaceView implements IGame, Runnable {
-    public static final int GAME_WIDTH = 450;
-    public static final int GAME_HEIGHT = 900;
+//    public static final int GAME_WIDTH = 450;
+//    public static final int GAME_HEIGHT = 900;
+    public static final int GAME_WIDTH = 1440;
+    public static final int GAME_HEIGHT = 2560;
 
     private Bitmap gameImage;
     private Rect gameImageSrc;
@@ -58,8 +61,7 @@ public class GameView extends SurfaceView implements IGame, Runnable {
 
                 // Lazy load game state
                 if (currentScreen == null) {
-                    // TODO: Finish
-//                    setCurrentScreen(new LoadingScreen(EscapismGameView.this, gamePresenter));
+                    setCurrentScreen(new LoadingScreen(GameView.this, gamePresenter, getContext()));
                 }
 
                 // Start the entire game

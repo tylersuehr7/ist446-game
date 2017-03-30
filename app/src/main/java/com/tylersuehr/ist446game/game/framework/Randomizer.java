@@ -21,10 +21,13 @@ public final class Randomizer {
         if (rnd == null) {
             rnd = new Random();
         }
-        return rnd.nextInt((upperLimit - lowerLimit) + lowerLimit);
+        return rnd.nextInt((upperLimit - lowerLimit)) + lowerLimit;
     }
 
     public static boolean chance(int prob) {
+        if (rnd == null) {
+            rnd = new Random();
+        }
         return rnd.nextInt(prob) == 1;
     }
 }

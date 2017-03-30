@@ -7,6 +7,7 @@ import android.graphics.Rect;
  * All game objects must inherit this... contains basic coordinates and hit rect.
  */
 public abstract class GameObject {
+    protected boolean visible;
     protected Rect bounds;
     protected float x;
     protected float y;
@@ -16,6 +17,7 @@ public abstract class GameObject {
         this.x = x;
         this.y = y;
         this.bounds = new Rect((int)x, (int)y, (int)x + width, (int)y + height);
+        this.visible = true;
     }
 
     public abstract void update(float delta);
@@ -26,6 +28,14 @@ public abstract class GameObject {
 
     public void setBounds(Rect bounds) {
         this.bounds = bounds;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     public float getX() {
