@@ -26,7 +26,6 @@ public final class Registry {
     private static SoundPool sounds;
     private static Map<String, Integer> colorCache;
 
-    public static float density;
     public static Drawable cloud;
     public static Drawable player;
     public static Drawable[] meteor;
@@ -37,7 +36,6 @@ public final class Registry {
         Registry.assets = c.getAssets();
         Registry.sounds = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
         Registry.colorCache = new HashMap<>();
-        Registry.density = c.getResources().getDisplayMetrics().density;
     }
 
     public static void loadResources(Context c) {
