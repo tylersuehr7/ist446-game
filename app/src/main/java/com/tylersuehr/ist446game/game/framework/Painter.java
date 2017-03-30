@@ -5,6 +5,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
 /**
  * Copyright 2017 Tyler Suehr
@@ -96,5 +97,21 @@ public final class Painter {
         this.srcRect.set(0, 0, bp.getWidth(), bp.getHeight());
         this.dstRect.set(x, y, x + width, y + height);
         this.canvas.drawBitmap(bp, srcRect, dstRect, paint);
+    }
+
+    public void drawImage(Drawable dr, int x, int y, int width, int height) {
+        dr.setBounds(x, y, x + width, y + height);
+        dr.draw(canvas);
+    }
+
+    public void drawGameObject(Bitmap bp, GameObject ob) {
+        this.canvas.drawBitmap(bp, ob.getX(), ob.getY(), paint);
+    }
+
+    public void drawGameObject(Drawable dr, GameObject ob) {
+        int x = (int)ob.getX();
+        int y = (int)ob.getY();
+        dr.setBounds(x, y, x + ob.getWidth(), y + ob.getHeight());
+        dr.draw(canvas);
     }
 }
