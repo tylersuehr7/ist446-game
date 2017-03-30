@@ -8,14 +8,18 @@ import android.support.annotation.IntDef;
  */
 public final class Physics {
     public static final int VELOCITY_NONE = 0;
-    public static final int VELOCITY_SLOW = 1;
-    public static final int VELOCITY_NORMAL = 2;
-    public static final int VELOCITY_FAST = 4;
+    public static final int VELOCITY_VERY_SLOW = 1;
+    public static final int VELOCITY_SLOW = 2;
+    public static final int VELOCITY_NORMAL = 4;
+    public static final int VELOCITY_FAST = 5;
+
+    public static final int GRAVITY = 4;
+
     public static final int DIRECTION_LEFT = 0;
     public static final int DIRECTION_RIGHT = 1;
 
 
-    @IntDef(value = { VELOCITY_NONE, VELOCITY_SLOW, VELOCITY_NORMAL, VELOCITY_FAST })
+    @IntDef(value = { VELOCITY_NONE, VELOCITY_VERY_SLOW, VELOCITY_SLOW, VELOCITY_NORMAL})
     public @interface Velocity {}
 
     @IntDef(value = { DIRECTION_LEFT, DIRECTION_RIGHT })
